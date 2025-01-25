@@ -1,0 +1,126 @@
+models:
+  - name: stg_local_bike__brands
+    description: "Bike brands offered to customers."
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+            - unique
+            - not_null
+
+  - name: stg_local_bike__categories
+    description: "Category of bike offered to customers."
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category."
+        tests:
+            - unique
+            - not_null
+          
+  - name: stg_local_bike__customers
+    description: "Customers of local bike compagny."
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customer."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_local_bike__order_items
+    description: "Items for each order."
+    columns:
+      - name: order_items_id
+        description: "Primary key, unique identifier for each order item."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__orders')
+              field: order_id
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__products')
+              field: product_id
+
+  - name: stg_local_bike__orders
+    description: "List of orders."
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__customers')
+              field: customer_id
+      - name: store_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__stores')
+              field: store_id
+      - name: staff_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__staffs')
+              field: staff_id
+
+  - name: stg_local_bike__products
+    description: "List of products."
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+          - unique
+          - not_null
+      - name: category_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__categories')
+              field: category_id
+      - name: brand_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__brands')
+              field: brand_id
+
+  - name: stg_local_bike__staffs
+    description: "Staffs of local bike compagny."
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff."
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__stores')
+              field: store_id
+      - name: manager_id
+        tests:
+          - relationships:
+              to: ref('stg_local_bike__staffs')
+              field: staff_id
+
+  - name: stg_local_bike__stocks
+    description: "Stocks of products."
+    columns:
+      - name: stock_id
+        description: "Primary key, unique identifier for each stock."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_local_bike__stores
+    description: "Stores of local bike compagny."
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each store."
+        tests:
+          - unique
+          - not_null
