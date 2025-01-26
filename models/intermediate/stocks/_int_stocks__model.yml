@@ -1,0 +1,8 @@
+models:
+  - name: int_stocks_joined_to_product
+    columns:
+      - name: stock_id
+        description: "Primary key for this table."
+        tests:
+          - unique
+          - not_null

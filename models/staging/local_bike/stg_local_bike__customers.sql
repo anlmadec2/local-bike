@@ -2,7 +2,10 @@ SELECT
     customer_id,
     first_name,
     last_name,
-    phone,
+    CASE WHEN
+        phone = 'NULL' THEN NULL
+        ELSE phone
+    END as phone,
     email,
     street,
     city,
