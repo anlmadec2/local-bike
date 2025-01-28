@@ -1,5 +1,6 @@
 models:
-  - name: int_stocks_joined_to_product
+  - name: int_stocks_joined_to_stores_and_products
+    description: "Stock details with stores and products."
     columns:
       - name: stock_id
         description: "Primary key for this table."

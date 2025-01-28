@@ -1,0 +1,9 @@
+models:
+  - name: int_products_joined_to_category_and_brand
+    description: "Product details with categores and brands."
+    columns:
+      - name: product_id
+        description: "Primary key for this table."
+        tests:
+          - unique
+          - not_null
