@@ -1,0 +1,11 @@
+
+
+models:
+  - name: int_order_items_joined_to_orders
+    description: "Orders with items."
+    columns:
+      - name: order_item_id
+        description: "Primary key for this table."
+        tests:
+          - unique
+          - not_null
