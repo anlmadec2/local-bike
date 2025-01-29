@@ -40,8 +40,7 @@ models:
   dwh:
     staging:
       materialized: view
-      local_bike:
-        schema: stg_local_bike
+      schema: stg_local_bike
 
     intermediate:
       materialized: view
