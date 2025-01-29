@@ -9,7 +9,7 @@ select
     oi.product_id,
     item_quantity,
     item_price,
-    discount,
+    discount_percent,
     total_order_item_amount
 from {{ ref('stg_local_bike__order_items') }} AS oi
     INNER JOIN {{ ref('stg_local_bike__orders') }} AS o ON o.order_id = oi.order_id

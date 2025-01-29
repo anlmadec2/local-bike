@@ -18,8 +18,8 @@ SELECT
     p.category_name,
     p.brand_name,
     s.stock_quantity,
-    products_solds.total_item_solds,
-    products_solds.total_sales_amount
+    po.total_item_solds,
+    po.total_sales_amount
 FROM {{ ref('int_stocks_joined_to_stores_and_products') }} AS s
     INNER JOIN {{ ref('int_products_joined_to_category_and_brand') }} AS p on p.product_id = s.product_id
     INNER JOIN product_orders po on s.store_id = po.store_id and s.product_id = po.product_id

@@ -1,4 +1,5 @@
 SELECT stocks.stock_id,
+    stores.store_id,
     stores.store_name,
     stocks.product_id, 
     -- p.product_name,
