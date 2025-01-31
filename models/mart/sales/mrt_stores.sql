@@ -1,5 +1,5 @@
 SELECT
-    DATE_TRUNC(date_value, date_granularity) as month,
+    DATE_TRUNC(o.order_date, MONTH) as month,
     EXTRACT(YEAR FROM o.order_date) as order_year,
     EXTRACT(MONTH FROM o.order_date) as order_month,
     stores.store_name,
