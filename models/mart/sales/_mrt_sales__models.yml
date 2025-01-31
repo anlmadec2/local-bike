@@ -13,7 +13,7 @@ models:
       
       It provides key metrics for each product name, category and brand; including the number of orders, number of items ordered, total order amounts.
 
-  - name: mrt_customers
+  - name: mrt_stores
     description: |
       This model aggregates stores order data from the `int_order_items_joined_to_orders`, `stg_local_bike__stores` and `stg_local_bike__staffs`.
       
