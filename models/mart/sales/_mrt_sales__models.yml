@@ -1,0 +1,20 @@
+models:
+
+  - name: mrt_customers
+    description: |
+      This model aggregates customer order data from the `int_order_items_joined_to_orders` and `stg_local_bike__customers`.
+      
+      It provides key metrics for each city and state, including the number of orders, number of items ordered, total and average 
+      order amounts.
+
+  - name: mrt_products
+    description: |
+      This model aggregates products order data from the `int_order_items_joined_to_orders` and `int_products_joined_to_category_and_brand`.
+      
+      It provides key metrics for each product name, category and brand; including the number of orders, number of items ordered, total order amounts.
+
+  - name: mrt_customers
+    description: |
+      This model aggregates stores order data from the `int_order_items_joined_to_orders`, `stg_local_bike__stores` and `stg_local_bike__staffs`.
+      
+      It provides key metrics for each store, city and state's store and staff; including the number of orders, number of items ordered, total order amounts.

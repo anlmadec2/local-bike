@@ -44,6 +44,10 @@ models:
           - relationships:
               to: ref('stg_local_bike__products')
               field: product_id
+      - name: total_order_item_amount  
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
 
   - name: stg_local_bike__orders
     description: "List of orders."
