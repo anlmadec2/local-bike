@@ -40,17 +40,14 @@ models:
   dwh:
     staging:
       materialized: view
-      local_bike:
-        schema: stg_local_bike
+      schema: stg_local_bike
 
     intermediate:
       materialized: view
-      local_bike: 
-        schema: int_local_bike
+      schema: int_local_bike
     mart:
       materialized: table
-      local_bike: 
-        schema: gold_local_bike
+      schema: mart_local_bike
 
   +persist_docs:
     relation: true
