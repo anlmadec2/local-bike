@@ -12,7 +12,7 @@ SELECT
     SUM(o.total_order_item_amount) AS total_sales_amount
 FROM {{ ref('int_order_items_joined_to_orders') }} o
     INNER JOIN {{ ref('stg_local_bike__stores') }} stores on stores.store_id = o.store_id
-    INNER JOIN {{ ref('stg_local_bike__staffs') }} staffs on staffs.store_id = o.store_id
+    INNER JOIN {{ ref('stg_local_bike__staffs') }} staffs on staffs.staff_id  = o.staff_id
 GROUP BY
     month,
     order_year,
